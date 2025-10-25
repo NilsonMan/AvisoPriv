@@ -5,7 +5,7 @@ import * as pdfjsLib from "pdfjs-dist";
 // Configura el worker de PDF.js
 pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
 
-export default function PDFViewerHighQuality({ pdfUrl = "/aviso_privacidad.pdf" }) {
+export default function PDFViewer({ pdfUrl = process.env.PUBLIC_URL + "/aviso_privacidad.pdf" }) {
   const containerRef = useRef(null);
   const [pdf, setPdf] = useState(null);
 
